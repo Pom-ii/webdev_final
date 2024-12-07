@@ -1,0 +1,418 @@
+/* VARIABLES */
+:root {
+  --bgWhite: rgb(244, 242, 255, 0.33);
+}
+
+/* BASIC */
+* {
+  color: #f4f2ff;
+  font-family: "poppins", sans-serif;
+  font-size: 14pt;
+}
+
+body {
+  background-color: #313036;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+a {
+  color: #f4f2ff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+/* HEADER */
+header,
+nav {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  background-color: #f4f2ff;
+  border-radius: 15px;
+}
+
+#navList {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.navList {
+  flex-grow: 1;
+  color: #313036;
+}
+
+.navList > a {
+  color: #313036;
+}
+
+/* IMAGES */
+
+#dogs {
+  display: flex;
+  height: 80%;
+  justify-content: space-evenly;
+  padding-bottom: 1em;
+}
+
+.dogs {
+  border-radius: 15px;
+  box-shadow: 10px 10px #f4f2ff;
+  max-width: 65%;
+  height: auto;
+}
+
+.gameIcons {
+  height: 2em;
+}
+
+.bigImg {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 2em 0;
+}
+
+.bigImg > img {
+  border-radius: 15px;
+  width: 90%;
+  box-shadow: 10px 10px #f4f2ff;
+}
+
+/* LISTS FOR GAMES, CONSOLES, USER MANAGEMENT, CONTACT */
+#games,
+#consoles,
+#pairs,
+#users,
+#contact {
+  display: flex;
+  justify-content: center;
+}
+
+#pairs {
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+#gamesList,
+#consolesList,
+#pairsList,
+#usersList,
+#contactList {
+  width: fit-content;
+  border-radius: 15px;
+  background-color: var(--bgWhite);
+  padding: 1.5em 1.25em;
+}
+
+#gamesList > li,
+#consolesList > li,
+#pairsList > li {
+  display: flex;
+  font-size: 16pt;
+  align-items: center;
+}
+
+#consolesList > li,
+#pairsList > li,
+#usersList > li {
+  line-height: 1.5em;
+}
+
+#addNew,
+#addUser, #message, #error /* + error/message from LOGIN */ {
+  text-align: center;
+}
+
+#addNew > h2 {
+  padding-bottom: 1em;
+}
+
+/* SINGLE GAME VIEW & ABOUT */
+
+img ~ a {
+  padding: 1em;
+  text-align: center;
+}
+
+#game,
+#aboutDesc {
+  display: flex;
+  justify-content: center;
+}
+
+#game > p,
+#aboutDesc > p {
+  width: 75%;
+  border: solid 5px #f4f2ff;
+  border-radius: 15px;
+  line-height: 1.5em;
+  padding: 1em 0.75em;
+}
+
+/* MODIFY & CREATE GAME */
+#gameFormContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.gameForm {
+  display: grid;
+  grid-template-areas:
+    ". nameL nameI ."
+    ". yearL yearI ."
+    ". descL descI ."
+    ". iconL iconI ."
+    ". bigL bigI ."
+    ". . submit .";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 80%;
+  align-items: center;
+  justify-items: start;
+}
+
+#nameL {
+  grid-area: nameL;
+  padding: 0;
+}
+
+#gamename {
+  grid-area: nameI;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.33em 0.5em;
+}
+
+#yearL {
+  grid-area: yearL;
+  padding: 0;
+}
+
+#gameyear {
+  grid-area: yearI;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.33em 0.5em;
+}
+
+#descL {
+  grid-area: descL;
+  padding: 0;
+  text-align: start;
+}
+
+#gamedesc {
+  grid-area: descI;
+  color: #313036;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.33em 0.5em;
+}
+
+#iconL {
+  grid-area: iconL;
+  padding: 0;
+}
+
+#gameicon {
+  grid-area: iconI;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.33em 0.5em;
+}
+
+#bigL {
+  grid-area: bigL;
+  padding: 0;
+}
+
+#gamebig {
+  grid-area: bigI;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.33em 0.5em;
+}
+
+#editSubmit {
+  grid-area: submit;
+  background-color: #f4f2ff;
+  padding: 0.5em;
+  border: solid 3px #313036;
+  border-radius: 15px;
+}
+
+#editSubmit:hover {
+  background-color: #c9bfff;
+}
+
+.modify,
+.delete {
+  color: #c9bfff;
+}
+
+/* LOGIN & USER MANAGEMENT*/
+#login,
+#userMod {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+form {
+  background-color: var(--bgWhite);
+  border-radius: 15px;
+  text-align: center;
+  line-height: 1.75em;
+  padding: 1em;
+}
+
+form input,
+[type="submit"],
+#userRole {
+  color: #313036;
+}
+
+form label {
+  padding: 1em;
+}
+
+#userPassword {
+  color: #313036;
+  border-radius: 5px;
+  border-style: none;
+  padding: 0.33em 0.5em;
+}
+
+/* HOME */
+#homePartial {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.homePartial {
+  background-color: var(--bgWhite);
+  border-radius: 15px;
+  width: 40%;
+}
+
+.homeList {
+  padding: 0;
+}
+
+.homeListItem {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.homeListItem > img {
+  height: 5em;
+}
+
+.homeForm,
+.homeForm > form {
+  display: flex;
+  background-color: transparent;
+}
+
+.pageNr {
+  display: flex;
+  gap: 2em;
+}
+
+.current {
+  color: #c9bfff;
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 701px) and (max-width: 1100px) {
+  #dogs {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+
+  .dogs {
+    margin: 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #dogs {
+    display: flex;
+    flex-flow: column nowrap;
+    height: fit-content;
+  }
+  .dogs {
+    margin: 1em;
+    max-width: 100%;
+  }
+
+  .gameForm {
+    grid-template-areas:
+      "nameL nameI"
+      "yearL yearI"
+      "descL descI"
+      "iconL iconI"
+      "bigL bigI"
+      ". submit";
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #gamesList > li,
+  #consolesList > li,
+  #pairsList > li {
+    font-size: 14pt;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .navList > a {
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  * {
+    font-size: 12pt;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #navList {
+    flex-flow: row wrap;
+  }
+
+  .navList {
+    padding: 0 0.25em 0.5em 0.25em;
+  }
+
+  #gamesList {
+    width: 90%;
+  }
+}

@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/jrr6auq.css" />
+    <title>Final Project</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul id="navList">
+          <li class="navList"><a href="/">Home</a></li>
+          <li class="navList"><a href="/about">About me</a></li>
+          <li class="navList"><a href="/contact">Contact</a></li>
+          <li class="navList"><a href="/games">Games</a></li>
+          <li class="navList"><a href="/consoles">Consoles</a></li>
+          {{#if session.isLoggedIn}}
+            {{#if session.isAdmin}}
+              <li class="navList"><a href="/users">User Management</a></li>
+            {{/if}}
+            <li class="navList">Hi
+              {{session.name}}! -
+              <a href="/logout">Logout</a></li>
+          {{else}}
+            <li class="navList"><a href="/login">Login</a></li>
+            <li class="navList"><a href="/register">Register</a></li>
+          {{/if}}
+        </ul>
+      </nav>
+    </header>
+    {{{body}}}
+  </body>
+</html>

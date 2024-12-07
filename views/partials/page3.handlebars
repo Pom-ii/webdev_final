@@ -1,0 +1,20 @@
+<div class="homePartial">
+  <ul class="homeList">
+    {{#each game}}
+      <li class="homeListItem">
+        <img class="gameIcons" src="{{gicon}}" alt="{{gicon}}" />
+        <a href="/game/{{gid}}">{{gname}}</a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<div class="pageNr"><p>1</p><p>//</p><p>2</p><p>//</p><p
+    class="current"
+  >3</p></div>
+<div class="homeForm">
+  <form action="/" method="GET"><input
+      type="submit"
+      name="page3"
+      value="<"
+    /></form>
+</div>
